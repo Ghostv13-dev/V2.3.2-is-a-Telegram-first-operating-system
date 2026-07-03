@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "es2021"],
+    "strict": true
+  },
+  "tasks": {
+    "start": "deno run --allow-net --allow-env --allow-read main.ts"
+  }
+}
