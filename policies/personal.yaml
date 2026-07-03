@@ -1,0 +1,7 @@
+# personal.yaml
+content:
+  max_post_length: 8192
+permission:
+  enforce_roles: false
+moderation:
+  spam_keywords: []

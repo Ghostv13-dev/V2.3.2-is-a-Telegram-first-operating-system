@@ -1,0 +1,7 @@
+# enterprise.yaml
+content:
+  max_post_length: 1024
+permission:
+  enforce_roles: true
+moderation:
+  spam_keywords: ["spam", "buy now"]
