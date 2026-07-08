@@ -1,0 +1,39 @@
+name: Deno CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Deno
+      #  Upgraded from v1 to v2 to fix the internal actions/cache dependency crash
+      uses: denoland/setup-deno@v2
+      with:
+        deno-version: v2.x 
+    
+    - name: Check formatting
+      run: deno fmt --check
+    
+    - name: Run linter
+      run: deno lint
+    
+    - name: Run tests
+      run: deno test --allow-all
+    
+    - name: Deploy to Deno Deploy
+      #  Using the up-to-date deployment action
+      uses: denoland/deployctl@v1
+      with:
+        project: your-project-name # ⚠️ Update this to your real Deno project name!
+        entrypoint: ./main.ts
+      env:
+        DENO_DEPLOY_TOKEN: ${{ secrets.DENO_DEPLOY_TOKEN }}
+permissions: 
