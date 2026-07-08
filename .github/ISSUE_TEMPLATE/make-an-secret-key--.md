@@ -1,9 +1,13 @@
 ---
-name: Feature request
+name: 'Make an Secret key, '
 about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
+title: " 1. Create a TXT record in your DNS configuration for the following hostname:
+  _gh-stos-deno-dev-o.stos.deno.dev 2. Use this code for the value of the TXT record:
+  208e1a82ac. Please note that the code will expire in 6 days. 3. Wait until your
+  DNS configuration changes"
+labels: enhancement
+assignees: Ghostv13-dev
+type: Task
 
 ---
 
